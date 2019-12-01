@@ -1,10 +1,14 @@
 import React from 'react';
 import { IdeaForm } from './components/IdeaForm';
+import { IdeasList } from './components/IdeasList';  
 import './App.css';
 
 const App = () => {
   return (
-    < IdeaForm />
+    <div>
+      < IdeaForm />
+      < IdeasList />
+    </div>
   );
 }
 
