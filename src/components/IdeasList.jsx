@@ -39,7 +39,7 @@ const IdeasListPure = (props) => {
     
 export const IdeasList = connect(
   state => ({
-    ideas: state.ideas
+    ideas: state.ideas.sort((a,b) => b.score - a.score)
   }),
   {increaseScore, decreaseScore}
 )(IdeasListPure)
