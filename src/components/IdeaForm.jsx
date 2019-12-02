@@ -5,8 +5,9 @@ import {addIdea} from '../actions/gameActions';
 const IdeaFormPure = ({addIdea}) => {
   const [title, setTitle] = useState("")
   const [text, setText] = useState("")
+  let id = Math.floor(Math.random()*1000)
   const handleClick = () => {
-    const ideaParams = {title, text}
+    const ideaParams = {id, title, text, score: 0}
     addIdea(ideaParams)
   }
 
