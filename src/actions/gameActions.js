@@ -7,3 +7,13 @@ const ideaCreated = (idea) => ({
   type: 'IDEA_CREATED',
   payload: idea
 })
+
+export const increaseScore = (id) => ({
+  type: 'INCREASE_SCORE',
+  payload: id
+})
+
+export const decreaseScore = (id) => ({
+  type: 'DECREASE_SCORE',
+  payload: id
+})
