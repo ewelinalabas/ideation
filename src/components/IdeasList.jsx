@@ -13,28 +13,37 @@ const Idea = (props) => {
   
   return(
     <li>
-      <p>Title: {idea.title}</p>
-      <p>Text: {idea.text}</p>
-      <p>Score: {idea.score}</p>
-      <button onClick={voteFor}>Up</button>
-      <button onClick={voteAgainst}>Down</button>
-    </li>
+        <p>Title: {idea.title}</p>
+        <p>Text: {idea.text}</p>
+        <p>Score: {idea.score}</p>
+        <button onClick={voteFor}>Up</button>
+        <button onClick={voteAgainst}>Down</button>
+      </li>
   )
 }
 
 const IdeasListPure = (props) => {
-  return(
-    <ul>
-    { props.ideas.map((idea, i) => 
-      <Idea 
-        key={i}
-        idea={idea} 
-        increaseScore={props.increaseScore}
-        decreaseScore={props.decreaseScore}
-      />
-    )}
-    </ul>
-  )
+  if(props.ideas.length == 0) {
+    return (
+      <h3>Submit the first idea</h3>
+    )
+  } else {
+    return (
+      <div>
+        <h3>Submitted ideas</h3>
+        <ul>
+          { props.ideas.map((idea, i) => 
+          <Idea 
+            key={i}
+            idea={idea} 
+            increaseScore={props.increaseScore}
+            decreaseScore={props.decreaseScore}
+          />
+          )}
+        </ul>
+      </div>
+    )
+  }
 }
     
 export const IdeasList = connect(
