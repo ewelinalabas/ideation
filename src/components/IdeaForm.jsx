@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import {addIdea} from '../actions/gameActions';
+import { addIdea } from '../actions/gameActions';
 
 const IdeaFormPure = ({addIdea}) => {
   const [title, setTitle] = useState("")
@@ -12,24 +12,24 @@ const IdeaFormPure = ({addIdea}) => {
     setTitle("")
     setText("")
   }
-
-
   return (
-    <div>
+    <div className='Split Left'>
       <h3>Add new idea</h3>
-      <label>Title</label>
+      <label>Title
       <input
-      type='text'
-      value={title}
-      onChange={(e) => setTitle(e.target.value)}
+        type='text'
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
       />
+      </label>
 
-      <label>Text</label>
+      <label>Text
       <input
-      type='text'
-      value={text}
-      onChange={(e) => setText(e.target.value)}
+        type='text'
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
+      </label>
       <button onClick={handleClick}>Add</button>
     </div>
   )

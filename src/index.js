@@ -8,6 +8,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import {gameReducer} from './reducers/gameReducer';
 import thunk from 'redux-thunk';
 
+
 const store = createStore(
   gameReducer,
   undefined,

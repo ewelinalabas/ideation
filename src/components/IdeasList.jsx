@@ -25,11 +25,11 @@ const Idea = (props) => {
 const IdeasListPure = (props) => {
   if(props.ideas.length == 0) {
     return (
-      <h3>Submit the first idea</h3>
+      <h3 className='Split Right'>There are no ideas to diplay yet. Submit the first one!</h3>
     )
   } else {
     return (
-      <div>
+      <div className='Split Right'>
         <h3>Submitted ideas</h3>
         <ul>
           { props.ideas.map((idea, i) => 
