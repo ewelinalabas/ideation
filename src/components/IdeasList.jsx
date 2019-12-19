@@ -12,13 +12,17 @@ const Idea = (props) => {
   }
   
   return(
-    <li>
-        <p>Title: {idea.title}</p>
-        <p>Text: {idea.text}</p>
-        <p>Score: {idea.score}</p>
-        <button onClick={voteFor}>Up</button>
-        <button onClick={voteAgainst}>Down</button>
+    <ul className="Idea">
+      <li className="IdeaDetails">
+          <p>Title: {idea.title}</p>
+          <p>Description: {idea.text}</p>
       </li>
+      <li className="IdeaScore">
+          <p>{idea.score}</p>
+          <button onClick={voteFor}>+</button>
+          <button onClick={voteAgainst}>-</button>
+      </li>
+    </ul>
   )
 }
 
@@ -31,7 +35,7 @@ const IdeasListPure = (props) => {
     return (
       <div className='Split Right'>
         <h3>Submitted ideas</h3>
-        <ul>
+        <div>
           { props.ideas.map((idea, i) => 
           <Idea 
             key={i}
@@ -40,7 +44,7 @@ const IdeasListPure = (props) => {
             decreaseScore={props.decreaseScore}
           />
           )}
-        </ul>
+        </div>
       </div>
     )
   }

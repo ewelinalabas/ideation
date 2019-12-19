@@ -1,40 +1,43 @@
-.App {
-  padding-left: 20px;
-}
 
 .Split {
-  width: 50%;
   height: 100%;
   position: fixed;
   z-index: 1;
   top: 0;
   overflow-x: hidden;
   padding-top: 20px;
-  text-align: center;
 }
 
 .Left {
+  width: 30%;
   left: 0;
 }
 
 .Right {
+  width: 70%;
   right: 0;
+  background-color: rgb(175, 192, 192)
 }
 
-label {
-  display: block;
-  margin: 15px 18px 30px 15px;
+h3 {
+  text-align: center
+}
+
+form {
+  margin: 30px 30px 8px 30px;
 }
 
 input {
-  width: 50%;
-  margin-left: 10px;
+  display: inline-block;
+  width: 100%;
+  margin: 8px 0px;
   padding: 15px 18px 15px 15px;
   border: 1px solid #1D9AF2;
   border-radius: 4px;
+  box-sizing: border-box
 }
 
-button {
+.AddIdea {
   color: #1D9AF2;
   background-color: #292D3E;
   border: 1px solid #1D9AF2;
@@ -42,10 +45,28 @@ button {
   padding: 15px 18px 30px 15px;
   cursor: pointer;
   height: 32px;
+  width: 86%;
   font-size: 14px;
   box-shadow: 0 0 4px #999;
   background-position: center;
   transition: background 0.8s;
+  margin: 0px 30px 30px 30px;
+}
+
+button {
+  color: #1D9AF2;
+  background-color: #292D3E;
+  border: 1px solid #1D9AF2;
+  border-radius: 4px;
+  padding: 1px 1px 1px 1px;
+  cursor: pointer;
+  height: 30px;
+  width: 20%;
+  font-size: 14px;
+  box-shadow: 0 0 4px #999;
+  background-position: center;
+  transition: background 0.8s;
+  margin: 0px 3px 0px 3px;
 }
 
 button:hover {
@@ -57,4 +78,23 @@ button:active{
   background-color:#292d3e;
   background-size: 100%;
   transition: background 0s;
+}
+
+.Idea {
+  display: flex;
+  list-style-type: none;
+  /* border: 1px solid #1D9AF2;
+  border-radius: 4px; */
+  margin: 0px 30px 30px 30px;
+}
+
+.IdeaDetails {
+  float: left;
+  width: 75%
+}
+
+.IdeaScore {
+  float: right;
+  width: 25%;
+  text-align: center
 }

@@ -1,5 +1,24 @@
 const initialState = {
-  ideas: []
+  ideas: [
+    {
+      id: 16,
+      title: 'dsd',
+      text: 'dsd',
+      score: 0
+    },
+    {
+      id: 106,
+      title: 'ffs',
+      text: 'dfsd',
+      score: 0
+    },
+    {
+      id: 774,
+      title: 'sdfsd',
+      text: 'sdfds',
+      score: 0
+    }
+  ]
 }
 
 const addPoint = (state, id) => {

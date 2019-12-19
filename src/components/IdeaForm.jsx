@@ -15,22 +15,22 @@ const IdeaFormPure = ({addIdea}) => {
   return (
     <div className='Split Left'>
       <h3>Add new idea</h3>
-      <label>Title
-      <input
-        type='text'
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      </label>
+      <form>
+        <label>Title</label>
+        <input
+          type='text'
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
 
-      <label>Text
-      <input
-        type='text'
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      </label>
-      <button onClick={handleClick}>Add</button>
+        <label>Description</label>
+        <input
+          type='text'
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+      </form>
+      <button className="AddIdea" onClick={handleClick}>Add</button>
     </div>
   )
 }
