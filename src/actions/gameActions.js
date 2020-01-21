@@ -17,3 +17,13 @@ export const decreaseScore = (id) => ({
   type: 'DECREASE_SCORE',
   payload: id
 })
+
+export const categoryFilters = (category) => ({
+  type: 'CATEGORY_FILTERS',
+  payload: category
+})
+
+export const scoreFilters = (scoreRange) => ({
+  type: 'SCORE_FILTERS',
+  payload: scoreRange
+})
