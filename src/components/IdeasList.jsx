@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { increaseScore, decreaseScore, categoryFilters, scoreFilters } from '../actions/gameActions';
-import { CATEGORIES } from '../constants/constants'
+import { increaseScore, decreaseScore } from '../actions/gameActions';
+import { Filters } from './Filters'
+
 
 const Idea = (props) => {
   const { idea } = props
@@ -29,53 +30,19 @@ const Idea = (props) => {
 }
 
 const IdeasListPure = (props) => {
-  const [min, setMin] = useState("")
-  const [max, setMax] = useState("")
-
-  useEffect(() => {
-    props.scoreFilters({min, max})
-    console.log({min, max})
-  }, [min, max])
-
   if(props.ideas.length == 0) {
     return (
-      <h3 className='Split Right'>There are no ideas to diplay yet. Submit the first one!</h3>
+      <div className='Split Right'>
+        <h3>Submitted ideas</h3>
+        <Filters />
+        <h3>There are no ideas to diplay.</h3>
+      </div>
     )
   } else {
     return (
       <div className='Split Right'>
         <h3>Submitted ideas</h3>
-        <p>Filter by category</p>
-        {
-          CATEGORIES.map(el => 
-            <div>
-              <label>{el}
-              <input 
-                type="checkbox"
-                name={el}
-                onChange={() => props.categoryFilters(el)}
-              />
-              </label>
-            </div>
-          )
-        }
-        <p>Filter by score</p>
-        <div>
-          <label>Min
-          <input 
-            type="number"
-            value={min}
-            onChange={(e) => {setMin(e.target.value)}}
-          />
-          </label>
-          <label>Max
-          <input 
-            type="number"
-            value={max}
-            onChange={(e) => {setMax(e.target.value)}}
-            />
-          </label>
-        </div>
+        <Filters />
         <div>
           { props.ideas.map((idea, i) => 
           <Idea 
@@ -115,7 +82,8 @@ const filterByScore = (ideas, scoreRange) => {
     
 export const IdeasList = connect(
   state => ({
-    ideas: filterByScore(filterByCategories(state.ideas, state.filters.categories), state.filters.score)
+    ideas: filterByScore(filterByCategories(state.ideas, state.filters.categories), state.filters.score),
+    filters: state.filters
   }),
-  {increaseScore, decreaseScore, categoryFilters, scoreFilters}
+  {increaseScore, decreaseScore}
 )(IdeasListPure)
