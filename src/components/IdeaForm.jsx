@@ -23,11 +23,13 @@ const IdeaFormPure = ({addIdea}) => {
         <label>Title</label>
         <input
           type='text'
+          className='Form-input'
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <label>Description</label>
         <input
+          className='Form-input'
           type='text'
           value={text}
           onChange={(e) => setText(e.target.value)}

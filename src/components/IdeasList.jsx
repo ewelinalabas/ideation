@@ -43,7 +43,7 @@ const IdeasListPure = (props) => {
       <div className='Split Right'>
         <h3>Submitted ideas</h3>
         <Filters />
-        <div>
+        <div className='IdeasList'>
           { props.ideas.map((idea, i) => 
           <Idea 
             key={i}

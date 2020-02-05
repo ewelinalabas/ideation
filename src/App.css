@@ -27,7 +27,7 @@ form {
   margin: 30px 30px 8px 30px;
 }
 
-input {
+.Form-input {
   display: inline-block;
   width: 100%;
   margin: 8px 0px;
@@ -97,4 +97,8 @@ button:active{
   float: right;
   width: 25%;
   text-align: center
+}
+
+.IdeasList {
+  margin-top: 300px;
 }
